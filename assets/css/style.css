@@ -1,0 +1,60 @@
+body {
+    background: #00000503;
+}
+
+header {
+    height: 80px;
+    background-color: #4f9fcf;
+}
+
+.box-wrapper {
+    border-left: 2px solid #000;
+    background-color: #cccccc;
+}
+
+.fill {
+    position: relative;
+    height: 200px;
+    width: 200px;
+    cursor: pointer;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+.empty {
+    display: inline-block;
+    height: 215px;
+    width: 215px;
+    margin: 10px;
+    padding: 5px;
+    border: solid 3px salmon;
+    background: white
+}
+
+.myDividerTop {
+    height: 1.4cm;
+    border-top: 1px solid #000;
+    box-sizing: border-box;
+    width: 2.5em;
+    position: relative;
+    border-left: 2px solid #000;
+}
+
+.myDivider {
+    height: 1.4cm;
+    box-sizing: border-box;
+    width: 2.5em;
+    position: relative;
+    border-left: 2px solid #000;
+}
+
+.myDividerBottom {
+    height: 1.4cm;
+    border-bottom: 1px solid #000;
+    box-sizing: border-box;
+    width: 2.5em;
+    position: relative;
+    border-left: 2px solid #000;
+}

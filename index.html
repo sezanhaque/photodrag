@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Photo Sorting</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+
+<link rel="stylesheet" href="./assets/css/bootstrap.css">
+<link rel="stylesheet" href="./assets/css/style.css">
+
+<script src="./assets/js/jquery.js"></script>
+<script src="./assets/js/html2canvas.js"></script>
+<script src="./assets/js/bootstrap.min.js"></script>
+<script src="./assets/js/app.js"></script>
+
+<body>
+    <header></header>
+    <div id="captureArea" class="col d-flex mt-4 mb-4">
+        <!-- Photos -->
+        <div class="box-wrapper shadow rounded container-fluid col ml-2">
+            <!-- 4 -->
+            <div class="row d-flex justify-content-center mt-3 mb-4">
+                <div class="container-fluid" style="position: absolute">
+                    <h3>4</h3>
+                </div>
+                <div class="empty" ondragenter="drag_enter(event)" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <img id="sort1" class="fill" src="./assets/images/White.png" draggable="true" ondragstart="drag(event)" />
+                </div>
+            </div>
+
+            <!-- 3 -->
+            <div class="row d-flex justify-content-center mt-3 mb-4">
+                <div class="container-fluid" style="position: absolute">
+                    <h3>3</h3>
+                </div>
+                <div class="empty" ondragenter="drag_enter(event)" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <img id="sort2" class="fill" src="./assets/images/White.png" draggable="true" ondragstart="drag(event)" />
+                </div>
+                <div class="empty" ondragenter="drag_enter(event)" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <img id="sort3" class="fill" src="./assets/images/White.png" draggable="true" ondragstart="drag(event)" />
+                </div>
+            </div>
+
+            <!-- 2 -->
+            <div class="row d-flex justify-content-center mt-5 mb-4">
+                <div class="container-fluid" style="position: absolute">
+                    <h3>2</h3>
+                </div>
+                <div class="empty" ondragenter="drag_enter(event)" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <img id="sort4" class="fill" src="./assets/images/White.png" draggable="true" ondragstart="drag(event)" />
+                </div>
+                <div class="empty" ondragenter="drag_enter(event)" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <img id="sort5" class="fill" src="./assets/images/White.png" draggable="true" ondragstart="drag(event)" />
+                </div>
+                <div class="empty" ondragenter="drag_enter(event)" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <img id="sort6" class="fill" src="./assets/images/White.png" draggable="true" ondragstart="drag(event)" />
+                </div>
+                <div class="empty" ondragenter="drag_enter(event)" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <img id="sort7" class="fill" src="./assets/images/White.png" draggable="true" ondragstart="drag(event)" />
+                </div>
+            </div>
+
+            <!-- 1 -->
+            <div class="row d-flex justify-content-center mt-4 mb-5">
+                <div class="container-fluid" style="position: absolute">
+                    <h3>1</h3>
+                </div>
+                <div class="empty" ondragenter="drag_enter(event)" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <img id="sort8" class="fill" src="./assets/images/White.png" draggable="true" ondragstart="drag(event)" />
+                </div>
+                <div class="empty" ondragenter="drag_enter(event)" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <img id="sort9" class="fill" src="./assets/images/White.png" draggable="true" ondragstart="drag(event)" />
+                </div>
+                <div class="empty" ondragenter="drag_enter(event)" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <img id="sort10" class="fill" src="./assets/images/White.png" draggable="true" ondragstart="drag(event)" />
+                </div>
+                <div class="empty" ondragenter="drag_enter(event)" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <img id="sort11" class="fill" src="./assets/images/White.png" draggable="true" ondragstart="drag(event)" />
+                </div>
+                <div class="empty" ondragenter="drag_enter(event)" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <img id="sort12" class="fill" src="./assets/images/White.png" draggable="true" ondragstart="drag(event)" />
+                </div>
+                <div class="empty" ondragenter="drag_enter(event)" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <img id="sort13" class="fill" src="./assets/images/White.png" draggable="true" ondragstart="drag(event)" />
+                </div>
+            </div>
+
+            <!-- 0 -->
+            <div class="row d-flex justify-content-center mt-3 mb-4">
+                <div class="container-fluid" style="position: absolute">
+                    <h3>0</h3>
+                </div>
+                <div class="empty" ondragenter="drag_enter(event)" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <img id="sort14" class="fill" src="./assets/images/White.png" draggable="true" ondragstart="drag(event)" />
+                </div>
+                <div class="empty" ondragenter="drag_enter(event)" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <img id="sort15" class="fill" src="./assets/images/White.png" draggable="true" ondragstart="drag(event)" />
+                </div>
+                <div class="empty" ondragenter="drag_enter(event)" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <img id="sort16" class="fill" src="./assets/images/White.png" draggable="true" ondragstart="drag(event)" />
+                </div>
+                <div class="empty" ondragenter="drag_enter(event)" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <img id="sort17" class="fill" src="./assets/images/White.png" draggable="true" ondragstart="drag(event)" />
+                </div>
+                <div class="empty" ondragenter="drag_enter(event)" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <img id="sort18" class="fill" src="./assets/images/White.png" draggable="true" ondragstart="drag(event)" />
+                </div>
+                <div class="empty" ondragenter="drag_enter(event)" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <img id="sort19" class="fill" src="./assets/images/White.png" draggable="true" ondragstart="drag(event)" />
+                </div>
+                <div class="empty" ondragenter="drag_enter(event)" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <img id="sort20" class="fill" src="./assets/images/White.png" draggable="true" ondragstart="drag(event)" />
+                </div>
+            </div>
+
+            <!-- -1 -->
+            <div class="row d-flex justify-content-center mt-3 mb-4">
+                <div class="container-fluid" style="position: absolute">
+                    <h3>-1</h3>
+                </div>
+                <div class="empty" ondragenter="drag_enter(event)" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <img id="sort21" class="fill" src="./assets/images/White.png" draggable="true" ondragstart="drag(event)" />
+                </div>
+                <div class="empty" ondragenter="drag_enter(event)" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <img id="sort22" class="fill" src="./assets/images/White.png" draggable="true" ondragstart="drag(event)" />
+                </div>
+                <div class="empty" ondragenter="drag_enter(event)" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <img id="sort23" class="fill" src="./assets/images/White.png" draggable="true" ondragstart="drag(event)" />
+                </div>
+                <div class="empty" ondragenter="drag_enter(event)" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <img id="sort24" class="fill" src="./assets/images/White.png" draggable="true" ondragstart="drag(event)" />
+                </div>
+                <div class="empty" ondragenter="drag_enter(event)" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <img id="sort25" class="fill" src="./assets/images/White.png" draggable="true" ondragstart="drag(event)" />
+                </div>
+                <div class="empty" ondragenter="drag_enter(event)" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <img id="sort26" class="fill" src="./assets/images/White.png" draggable="true" ondragstart="drag(event)" />
+                </div>
+            </div>
+
+            <!-- -2 -->
+            <div class="row d-flex justify-content-center mt-5 mb-4">
+                <div class="container-fluid" style="position: absolute">
+                    <h3>-2</h3>
+                </div>
+                <div class="empty" ondragenter="drag_enter(event)" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <img id="sort27" class="fill" src="./assets/images/White.png" draggable="true" ondragstart="drag(event)" />
+                </div>
+                <div class="empty" ondragenter="drag_enter(event)" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <img id="sort28" class="fill" src="./assets/images/White.png" draggable="true" ondragstart="drag(event)" />
+                </div>
+                <div class="empty" ondragenter="drag_enter(event)" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <img id="sort29" class="fill" src="./assets/images/White.png" draggable="true" ondragstart="drag(event)" />
+                </div>
+                <div class="empty" ondragenter="drag_enter(event)" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <img id="sort30" class="fill" src="./assets/images/White.png" draggable="true" ondragstart="drag(event)" />
+                </div>
+            </div>
+
+            <!-- -3 -->
+            <div class="row d-flex justify-content-center mt-4 mb-4">
+                <div class="container-fluid" style="position: absolute">
+                    <h3>-3</h3>
+                </div>
+                <div class="empty" ondragenter="drag_enter(event)" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <img id="sort31" class="fill" src="./assets/images/White.png" draggable="true" ondragstart="drag(event)" />
+                </div>
+                <div class="empty" ondragenter="drag_enter(event)" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <img id="sort32" class="fill" src="./assets/images/White.png" draggable="true" ondragstart="drag(event)" />
+                </div>
+            </div>
+
+            <!-- -4 -->
+            <div class="row d-flex justify-content-center mt-5 mb-4">
+                <div class="container-fluid" style="position: absolute">
+                    <h3>-4</h3>
+                </div>
+                <div class="empty" ondragenter="drag_enter(event)" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <img id="sort33" class="fill" src="./assets/images/White.png" draggable="true" ondragstart="drag(event)" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 33 pictures -->
+    <!-- Swap Drag & Drop -->
+
+    <div id="picCollection" class="container-fluid">
+        <div class="col pl-1 pr-1">
+            <div class="shadow p-3 mb-5 bg-white rounded">
+                <div class="row d-flex justify-content-center">
+                    <div class="empty" ondragenter="drag_enter(event)" ondrop="drop(event)"
+                        ondragover="allowDrop(event)">
+                        <img id="drag1" class="fill" src="./assets/images/Q-sort-pic/1.jpg" draggable="true" ondragstart="drag(event)" />
+                    </div>
+                    <br />
+                    <div class="empty" ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <img id="drag2" class="fill" src="././assets/images/Q-sort-pic/2.jpg" draggable="true" ondragstart="drag(event)" />
+                    </div>
+                    <div class="empty" ondragenter="drag_enter(event)" ondrop="drop(event)"
+                        ondragover="allowDrop(event)">
+                        <img id="drag3" class="fill" src="././assets/images/Q-sort-pic/3.jpg" draggable="true" ondragstart="drag(event)" />
+                    </div>
+                    <br />
+                    <div class="empty" ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <img id="drag4" class="fill" src="././assets/images/Q-sort-pic/4.jpg" draggable="true" ondragstart="drag(event)" />
+                    </div>
+                    <div class="empty" ondragenter="drag_enter(event)" ondrop="drop(event)"
+                        ondragover="allowDrop(event)">
+                        <img id="drag5" class="fill" src="././assets/images/Q-sort-pic/5.jpg" draggable="true" ondragstart="drag(event)" />
+                    </div>
+                    <br />
+                    <div class="empty" ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <img id="drag6" class="fill" src="././assets/images/Q-sort-pic/6.jpg" draggable="true" ondragstart="drag(event)" />
+                    </div>
+                    <div class="empty" ondragenter="drag_enter(event)" ondrop="drop(event)"
+                        ondragover="allowDrop(event)">
+                        <img id="drag7" class="fill" src="././assets/images/Q-sort-pic/7.jpg" draggable="true" ondragstart="drag(event)" />
+                    </div>
+                    <br />
+                    <div class="empty" ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <img id="drag8" class="fill" src="././assets/images/Q-sort-pic/8.jpg" draggable="true" ondragstart="drag(event)" />
+                    </div>
+                    <div class="empty" ondragenter="drag_enter(event)" ondrop="drop(event)"
+                        ondragover="allowDrop(event)">
+                        <img id="drag9" class="fill" src="././assets/images/Q-sort-pic/9.jpg" draggable="true" ondragstart="drag(event)" />
+                    </div>
+                    <br />
+                    <div class="empty" ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <img id="drag10" class="fill" src="././assets/images/Q-sort-pic/10.jpg" draggable="true" ondragstart="drag(event)" />
+                    </div>
+                    <div class="empty" ondragenter="drag_enter(event)" ondrop="drop(event)"
+                        ondragover="allowDrop(event)">
+                        <img id="drag11" class="fill" src="././assets/images/Q-sort-pic/11.jpg" draggable="true" ondragstart="drag(event)" />
+                    </div>
+                    <br />
+                    <div class="empty" ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <img id="drag12" class="fill" src="././assets/images/Q-sort-pic/12.jpg" draggable="true" ondragstart="drag(event)" />
+                    </div>
+                    <div class="empty" ondragenter="drag_enter(event)" ondrop="drop(event)"
+                        ondragover="allowDrop(event)">
+                        <img id="drag13" class="fill" src="././assets/images/Q-sort-pic/13.jpg" draggable="true" ondragstart="drag(event)" />
+                    </div>
+                    <br />
+                    <div class="empty" ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <img id="drag14" class="fill" src="././assets/images/Q-sort-pic/14.jpg" draggable="true" ondragstart="drag(event)" />
+                    </div>
+                    <div class="empty" ondragenter="drag_enter(event)" ondrop="drop(event)"
+                        ondragover="allowDrop(event)">
+                        <img id="drag15" class="fill" src="././assets/images/Q-sort-pic/15.jpg" draggable="true" ondragstart="drag(event)" />
+                    </div>
+                    <br />
+                    <div class="empty" ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <img id="drag16" class="fill" src="././assets/images/Q-sort-pic/16.jpg" draggable="true" ondragstart="drag(event)" />
+                    </div>
+                    <div class="empty" ondragenter="drag_enter(event)" ondrop="drop(event)"
+                        ondragover="allowDrop(event)">
+                        <img id="drag17" class="fill" src="././assets/images/Q-sort-pic/17.jpg" draggable="true" ondragstart="drag(event)" />
+                    </div>
+                    <br />
+                    <div class="empty" ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <img id="drag18" class="fill" src="././assets/images/Q-sort-pic/18.jpg" draggable="true" ondragstart="drag(event)" />
+                    </div>
+                    <div class="empty" ondragenter="drag_enter(event)" ondrop="drop(event)"
+                        ondragover="allowDrop(event)">
+                        <img id="drag19" class="fill" src="././assets/images/Q-sort-pic/19.jpg" draggable="true" ondragstart="drag(event)" />
+                    </div>
+                    <br />
+                    <div class="empty" ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <img id="drag20" class="fill" src="././assets/images/Q-sort-pic/20.jpg" draggable="true" ondragstart="drag(event)" />
+                    </div>
+                    <div class="empty" ondragenter="drag_enter(event)" ondrop="drop(event)"
+                        ondragover="allowDrop(event)">
+                        <img id="drag21" class="fill" src="././assets/images/Q-sort-pic/21.jpg" draggable="true" ondragstart="drag(event)" />
+                    </div>
+                    <br />
+                    <div class="empty" ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <img id="drag22" class="fill" src="././assets/images/Q-sort-pic/22.jpg" draggable="true" ondragstart="drag(event)" />
+                    </div>
+                    <div class="empty" ondragenter="drag_enter(event)" ondrop="drop(event)"
+                        ondragover="allowDrop(event)">
+                        <img id="drag23" class="fill" src="././assets/images/Q-sort-pic/23.jpg" draggable="true" ondragstart="drag(event)" />
+                    </div>
+                    <br />
+                    <div class="empty" ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <img id="drag24" class="fill" src="././assets/images/Q-sort-pic/24.jpg" draggable="true" ondragstart="drag(event)" />
+                    </div>
+                    <div class="empty" ondragenter="drag_enter(event)" ondrop="drop(event)"
+                        ondragover="allowDrop(event)">
+                        <img id="drag25" class="fill" src="././assets/images/Q-sort-pic/25.jpg" draggable="true" ondragstart="drag(event)" />
+                    </div>
+                    <br />
+                    <div class="empty" ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <img id="drag26" class="fill" src="././assets/images/Q-sort-pic/26.jpg" draggable="true" ondragstart="drag(event)" />
+                    </div>
+                    <div class="empty" ondragenter="drag_enter(event)" ondrop="drop(event)"
+                        ondragover="allowDrop(event)">
+                        <img id="drag27" class="fill" src="././assets/images/Q-sort-pic/27.jpg" draggable="true" ondragstart="drag(event)" />
+                    </div>
+                    <br />
+                    <div class="empty" ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <img id="drag28" class="fill" src="././assets/images/Q-sort-pic/28.jpg" draggable="true" ondragstart="drag(event)" />
+                    </div>
+                    <div class="empty" ondragenter="drag_enter(event)" ondrop="drop(event)"
+                        ondragover="allowDrop(event)">
+                        <img id="drag29" class="fill" src="././assets/images/Q-sort-pic/29.jpg" draggable="true" ondragstart="drag(event)" />
+                    </div>
+                    <br />
+                    <div class="empty" ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <img id="drag30" class="fill" src="././assets/images/Q-sort-pic/30.jpg" draggable="true" ondragstart="drag(event)" />
+                    </div>
+                    <div class="empty" ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <img id="drag31" class="fill" src="././assets/images/Q-sort-pic/31.jpg" draggable="true" ondragstart="drag(event)" />
+                    </div>
+                    <br />
+                    <div class="empty" ondragenter="drag_enter(event)" ondrop="drop(event)"
+                        ondragover="allowDrop(event)">
+                        <img id="drag32" class="fill" src="././assets/images/Q-sort-pic/32.jpg" draggable="true" ondragstart="drag(event)" />
+                    </div>
+                    <div class="empty" ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <img id="drag33" class="fill" src="././assets/images/Q-sort-pic/33.jpg" draggable="true" ondragstart="drag(event)" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Screenshot -->
+    <div class="container" id="panel">
+        <br /><br /><br />
+        <div class="row">
+            <div class="col-md-6 offset-md-3 shadow p-3 mb-5 bg-white rounded"
+                style="background: white; padding: 20px; box-shadow: 10px 10px 5px #888888;">
+                <h1>Take Screenshots</h1>
+                <hr />
+                <input type="text" name="caption-input" id="caption-input" placeholder="Caption..."
+                    class="form-control" />
+                <br />
+                <a href="javascript:getScreen();" class="btn btn-lg btn-block btn-outline-success">Capture Screenshot
+                    and Download</a>
+                <a href="" id="blank"></a>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Main Script -->
+
+</body>
+
+</html>
